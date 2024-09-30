@@ -1,11 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:scalers_test/core/constant/colors.dart';
-import 'package:scalers_test/feature/job/jobs/widgets/job_card/job_card_image.dart';
-import 'package:scalers_test/feature/job/jobs/widgets/job_card/job_card_posted_time.dart';
-import 'package:scalers_test/feature/job/jobs/widgets/job_card/job_card_specifications.dart';
+import 'package:scalers_test/core/constant/routes.dart';
+import 'package:scalers_test/data/models/job_model.dart';
+
+import 'job_card/job_card_image.dart';
+import 'job_card/job_card_posted_time.dart';
+import 'job_card/job_card_specifications.dart';
 
 class JobsJobCard extends StatelessWidget {
-  const JobsJobCard({super.key});
+  final JobModel? job;
+  const JobsJobCard({super.key, this.job});
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +28,9 @@ class JobsJobCard extends StatelessWidget {
         ),
       ),
       child: InkWell(
-        onTap: () {},
+        onTap: () {
+          Get.toNamed(MyRoutes.JOB_DETAILS, arguments: job?.id as String);
+        },
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -31,11 +38,17 @@ class JobsJobCard extends StatelessWidget {
             Row(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                const JobCardImage(),
-                JobCardSpecifications(),
+                JobCardImage(
+                  url: job?.companyLogo,
+                ),
+                JobCardSpecifications(
+                  job: job,
+                ),
               ],
             ),
-            const JobCardPostedTime()
+            JobCardPostedTime(
+              postedTime: job?.createdDate,
+            )
           ],
         ),
       ),

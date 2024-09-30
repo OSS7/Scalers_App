@@ -9,6 +9,8 @@ class JobsAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
+    final textTheme = Theme.of(context).textTheme;
+
     return Container(
       padding: _padding,
       height: size.height * 0.08,
@@ -20,12 +22,9 @@ class JobsAppBar extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          const Text(
+          Text(
             'Jobs',
-            style: TextStyle(
-              fontWeight: FontWeight.bold,
-              fontSize: 20,
-            ),
+            style: textTheme.headlineLarge?.copyWith(fontSize: 22)
           ),
           CustomIcon(
             AppIcons.NOTIFICATION,

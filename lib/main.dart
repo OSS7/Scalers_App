@@ -1,25 +1,27 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'feature/job/jobs/jobs_view.dart';
+import 'core/config/injectable_cofig.dart';
+import 'core/config/route_config.dart';
+import 'core/config/route_config.dart' as my_route;
+import 'core/constant/colors.dart';
+import 'presentation/jobs/jobs_view.dart';
 
 void main() {
+  configureDependencies();
   runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
-
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
+      getPages: my_route.getPages,
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        textTheme: GoogleFonts.ibmPlexSansTextTheme().apply(
-          bodyColor: const Color(0xFF000000),
-        ),
-      ),
-      home: JobsView(),
+      theme: lightTheme,
+      themeMode: ThemeMode.light,
+      home: const JobsView(),
     );
   }
 }

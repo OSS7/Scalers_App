@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -24,7 +23,7 @@ class CustomSnackBar {
         right: 10,
       ),
       colorText: cWhite,
-      backgroundColor: cGrey,
+      backgroundColor: cPurple,
       icon: Icon(
         Icons.check_circle,
         color: cWhite,

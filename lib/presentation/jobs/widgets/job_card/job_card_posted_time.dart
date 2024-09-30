@@ -3,14 +3,15 @@ import 'package:flutter/material.dart';
 import '../../../../../core/constant/colors.dart';
 
 class JobCardPostedTime extends StatelessWidget {
-  const JobCardPostedTime({super.key});
+  final String? postedTime;
+  const JobCardPostedTime({super.key, this.postedTime});
 
   @override
   Widget build(BuildContext context) {
     return Align(
       alignment: Alignment.bottomRight,
       child: Text(
-        "3 hours ago",
+        _timeAgo(postedTime) ?? '',
         style: TextStyle(
           fontSize: 12,
           fontWeight: FontWeight.bold,
@@ -18,5 +19,16 @@ class JobCardPostedTime extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  String? _timeAgo(String? date) {
+    if (date == null || date.isEmpty) {
+      return null;
+    }
+
+    DateTime postedDate = DateTime.parse(date);
+    DateTime now = DateTime.now();
+    Duration difference = now.difference(postedDate);
+    return '${difference.inDays} days ago';
   }
 }

@@ -24,15 +24,15 @@ class CustomButton extends StatelessWidget {
       width: size.width * 0.9,
       height: height ?? size.height * 0.07,
       child: MaterialButton(
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
-        disabledColor: backgroundColor ?? cWhite,
-        color: backgroundColor ?? cWhite,
-        highlightColor: backgroundColor ?? cWhite,
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+        disabledColor: backgroundColor ?? cPurple,
+        color: backgroundColor ?? cPurple,
+        highlightColor: backgroundColor ?? cPurple,
         onPressed: onPress,
         child: Text(
           title,
           style: TextStyle(
-            color: foregroundColor ?? cPurple,
+            color: foregroundColor ?? cWhite,
             fontSize: 20,
           ),
         ),

@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
 class JobCardImage extends StatelessWidget {
-  const JobCardImage({super.key});
+  final String? url;
+  const JobCardImage({super.key, required this.url});
 
   @override
   Widget build(BuildContext context) {
@@ -10,7 +11,7 @@ class JobCardImage extends StatelessWidget {
     return ClipRRect(
       borderRadius: BorderRadius.circular(8),
       child: Image.network(
-        "https://i.ibb.co/Y2v3VDP/images.png",
+        url ?? '',
         fit: BoxFit.cover,
         width: size.width * 0.175,
         height: size.height * 0.1,

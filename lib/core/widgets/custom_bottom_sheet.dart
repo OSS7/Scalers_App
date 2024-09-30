@@ -16,6 +16,8 @@ class _CustomBottomSheetState extends State<CustomBottomSheet> {
   @override
   Widget build(BuildContext context) {
     return BottomNavigationBar(
+      selectedLabelStyle: TextStyle(color: cBlack),
+      unselectedLabelStyle: TextStyle(color: cBlack),
       backgroundColor: cHighLightWhite,
       type: BottomNavigationBarType.fixed,
       items: [
