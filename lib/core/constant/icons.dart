@@ -1,5 +1,5 @@
 class AppIcons {
-  static String JOB = 'assets/icons/job.svg',
+  static String JOB = 'assets/icons/jobs.svg',
       SETTING = 'assets/icons/setting.svg',
       NOTIFICATION = 'assets/icons/notification.svg',
       BACK = 'assets/icons/back.svg',

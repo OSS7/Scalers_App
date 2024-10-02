@@ -20,13 +20,16 @@ class JobDetailsHeader extends StatelessWidget {
           height: size.height * 0.08,
           child: Row(
             children: [
-              ClipRRect(
-                borderRadius: BorderRadius.circular(8),
-                child: Image.network(
-                  job?.companyLogo ?? 'N/A url',
-                  fit: BoxFit.cover,
-                  width: size.width * 0.14,
-                  height: size.height * 0.08,
+              Hero(
+                tag: job?.companyLogo ?? 'image_url',
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(8),
+                  child: Image.network(
+                    job?.companyLogo ?? 'N/A url',
+                    fit: BoxFit.cover,
+                    width: size.width * 0.14,
+                    height: size.height * 0.08,
+                  ),
                 ),
               ),
               Expanded(

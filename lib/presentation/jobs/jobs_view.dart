@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:bloc/bloc.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../../core/constant/colors.dart';
 import '../../../core/widgets/custom_bottom_sheet.dart';
 import 'bloc/job_bloc.dart';
 import 'widgets/jobs_app_bar.dart';
@@ -24,13 +22,13 @@ class _JobsViewState extends State<JobsView> {
         bottomNavigationBar: const CustomBottomSheet(),
         body: SizedBox(
           child: BlocBuilder<JobBloc, JobState>(
-            bloc: jobBloc..add(FetchJobs()),
+            bloc: jobBloc..add(FetchJobsEvent()),
             builder: (context, state) {
               return Column(
                 children: [
                   JobsAppBar(),
                   state is JobLoaded
-                      ? const JobsBody()
+                      ? JobsBody()
                       : Expanded(
                           child: Center(
                             child: state is JobError

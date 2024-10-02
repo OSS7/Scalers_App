@@ -19,35 +19,36 @@ class JobDetailsView extends StatelessWidget {
     print('jobUUID: $jobUUId');
     return SafeArea(
       child: Scaffold(
-        backgroundColor: cWhite,
         bottomNavigationBar: const CustomBottomSheet(),
         body: Column(
           children: [
             const JobDetailsAppBar(),
-            BlocBuilder<JobDetailsBloc, JobDetailsState>(
-              bloc: jobDetailsBloc..add(FetchJobDetails(jobUUId)),
-              builder: (context, state) {
-                if (state is JobDetailsLoaded) {
-                  return Expanded(child: JobDetailsBody());
-                } else {
-                  return Expanded(
-                    child: Center(
+            Expanded(
+              child: BlocBuilder<JobDetailsBloc, JobDetailsState>(
+                bloc: jobDetailsBloc..add(FetchJobDetails(jobUUId)),
+                builder: (context, state) {
+                  if (state is JobDetailsLoaded) {
+                    return JobDetailsBody();
+                  } else {
+                    return Center(
                       child: state is JobDetailsError
                           ? Text(state.message)
                           : const Center(
                               child: CircularProgressIndicator(),
                             ),
-                    ),
-                  );
-                }
-              },
+                    );
+                  }
+                },
+              ),
             ),
             Container(
               margin: const EdgeInsets.symmetric(vertical: 5.0, horizontal: 5),
               child: CustomButton(
                 onPress: () {
                   CustomSnackBar.showCustomSnackBar(
-                      title: "Success", message: "Applied Successfully",);
+                    title: "Success",
+                    message: "Applied Successfully",
+                  );
                 },
                 title: 'Apply',
               ),

@@ -9,12 +9,12 @@ class JobModel {
 
   JobModel({
     required this.id,
-    required this.createdDate,
-    required this.title,
-    required this.companyName,
-    required this.companyLogo,
-    required this.location,
-    required this.jobType,
+    this.createdDate,
+    this.title,
+    this.companyName,
+    this.companyLogo,
+    this.location,
+    this.jobType,
   });
 
   factory JobModel.fromJson(Map<String, dynamic> json) {

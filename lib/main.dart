@@ -20,6 +20,7 @@ class MyApp extends StatelessWidget {
       getPages: my_route.getPages,
       debugShowCheckedModeBanner: false,
       theme: lightTheme,
+      darkTheme: darkTheme,
       themeMode: ThemeMode.light,
       home: const JobsView(),
     );

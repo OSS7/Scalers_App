@@ -15,13 +15,14 @@ class JobsJobCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
+    final colorScheme = Theme.of(context).colorScheme;
     return Container(
       width: size.width * 0.8,
       height: size.height * 0.2,
       margin: _cardMargin,
       padding: _cardPadding,
       decoration: BoxDecoration(
-        color: cWhite,
+        color: colorScheme.secondary,
         borderRadius: _borderRadius,
         border: Border.all(
           color: cHighLightWhite,

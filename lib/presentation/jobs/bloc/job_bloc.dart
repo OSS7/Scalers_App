@@ -16,7 +16,7 @@ class JobBloc extends Bloc<JobEvent, JobState> {
   List<JobModel> jobs = [];
 
   JobBloc() : super(JobInitial()) {
-    on<FetchJobs>(
+    on<FetchJobsEvent>(
       (event, emit) async {
         emit(JobLoading());
         try {

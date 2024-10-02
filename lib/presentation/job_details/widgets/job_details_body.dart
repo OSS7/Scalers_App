@@ -20,9 +20,9 @@ class JobDetailsBody extends StatelessWidget {
       child: SingleChildScrollView(
         child: Column(
           children: [
-            JobDetailsHeader(),
-            JobDetailsJobSpecification(),
-            JobDetailsDescription(),
+            const JobDetailsHeader(),
+            const JobDetailsJobSpecification(),
+            const JobDetailsDescription(),
             JobDetailsCompanyCard(),
           ],
         ),

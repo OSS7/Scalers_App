@@ -64,40 +64,4 @@ class CustomSnackBar {
       ),
     );
   }
-
-  static showCustomToast(
-      {String? title,
-      required String message,
-      Color? color,
-      Duration? duration}) {
-    Get.rawSnackbar(
-      padding: const EdgeInsets.all(10),
-      title: title,
-      duration: duration ?? const Duration(seconds: 6),
-      snackStyle: SnackStyle.FLOATING,
-      backgroundColor: color ?? cGrey,
-      onTap: (snack) {
-        Get.closeAllSnackbars();
-      },
-      message: message,
-    );
-  }
-
-  static showCustomErrorToast(
-      {String? title,
-      required String message,
-      Color? color,
-      Duration? duration}) {
-    Get.rawSnackbar(
-      title: title,
-      duration: duration ?? const Duration(seconds: 3),
-      snackStyle: SnackStyle.GROUNDED,
-      backgroundColor: color ?? cRed,
-      onTap: (snack) {
-        Get.closeAllSnackbars();
-      },
-      //overlayBlur: 0.8,
-      message: message,
-    );
-  }
 }

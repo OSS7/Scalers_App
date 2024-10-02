@@ -8,13 +8,16 @@ class JobCardImage extends StatelessWidget {
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
 
-    return ClipRRect(
-      borderRadius: BorderRadius.circular(8),
-      child: Image.network(
-        url ?? '',
-        fit: BoxFit.cover,
-        width: size.width * 0.175,
-        height: size.height * 0.1,
+    return Hero(
+      tag: url ?? 'image_tag',
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(8),
+        child: Image.network(
+          url ?? '',
+          fit: BoxFit.cover,
+          width: size.width * 0.175,
+          height: size.height * 0.1,
+        ),
       ),
     );
   }

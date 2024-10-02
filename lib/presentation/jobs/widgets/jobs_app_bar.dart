@@ -10,22 +10,19 @@ class JobsAppBar extends StatelessWidget {
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     final textTheme = Theme.of(context).textTheme;
-
+    final colorScheme = Theme.of(context).colorScheme;
     return Container(
       padding: _padding,
       height: size.height * 0.08,
       decoration: BoxDecoration(
-        color: cWhite,
+        color: colorScheme.secondary,
         boxShadow: [_boxShadow],
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Text(
-            'Jobs',
-            style: textTheme.headlineLarge?.copyWith(fontSize: 22)
-          ),
+          Text('Jobs', style: textTheme.headlineLarge?.copyWith(fontSize: 22)),
           CustomIcon(
             AppIcons.NOTIFICATION,
             size: 45,

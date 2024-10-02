@@ -13,12 +13,13 @@ class JobDetailsCompanyCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     final textTheme = Theme.of(context).textTheme;
+    final colorScheme = Theme.of(context).colorScheme;
     final job = jobDetailsBloc.job;
     return Container(
       margin: _cardMargin,
       padding: _cardPadding,
       decoration: BoxDecoration(
-        color: cWhite,
+        color: colorScheme.secondary,
         borderRadius: _borderRadius,
         border: Border.all(
           color: cHighLightWhite,
@@ -82,7 +83,7 @@ class JobDetailsCompanyCard extends StatelessWidget {
           ),
           Text(
             job?.jobDescription ?? 'N/A description',
-            style: textTheme.bodySmall?.copyWith(color: cBlack),
+            style: textTheme.bodySmall,
           )
         ],
       ),
