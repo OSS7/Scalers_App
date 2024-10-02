@@ -27,7 +27,7 @@ class JobDetailsHeader extends StatelessWidget {
                   child: Image.network(
                     job?.companyLogo ?? 'N/A url',
                     fit: BoxFit.cover,
-                    width: size.width * 0.14,
+                    width: size.width * 0.15,
                     height: size.height * 0.08,
                   ),
                 ),

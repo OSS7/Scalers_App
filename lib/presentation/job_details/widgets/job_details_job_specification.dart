@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
-import '../../../core/constant/colors.dart';
-import '../../../data/models/job_details_model.dart';
 import '../bloc/job_details_bloc.dart';
 import 'job_details_tag.dart';
 
+/// Displays the job title, location, workplace preference and job type.
+/// Also displays the job requirements as tags.
 class JobDetailsJobSpecification extends StatelessWidget {
   const JobDetailsJobSpecification({super.key});
 

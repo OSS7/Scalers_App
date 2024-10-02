@@ -47,14 +47,14 @@ class JobDetailsModel {
       companyIndustry: json['company']['industry'],
       location: json['location']['name_en'],
       vertical: json['location']['name_en'],
-      jobType: json['type']['name_en'], // Full-time or Part-time
+      jobType: json['type']['name_en'],
       workplacePreference: json['workplace_preference']
-          ['name_en'], // On-Site or Hybrid
-      jobStatus: json['status']['name_en'], // e.g., Opened
+          ['name_en'],
+      jobStatus: json['status']['name_en'],
       jobDescription: json['icp_answers']['job-role'][0]
-          ['description_en'], // First job role description
+          ['description_en'],
       requirements:
-          jobRequirements, // List of requirements extracted from icp_answers
+          jobRequirements,
     );
   }
 

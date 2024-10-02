@@ -3,10 +3,7 @@ import 'package:get/get.dart';
 
 import '../constant/colors.dart';
 
-///class that provide dialog, snackbars and toast so will be like a notification
-///used to inform the user about the action that he did.
-/// for example:
-/// when login or when added new cars.
+
 class CustomSnackBar {
   static showCustomSnackBar(
       {required String title, required String message, Duration? duration}) {

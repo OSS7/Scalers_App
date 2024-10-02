@@ -6,6 +6,7 @@ class JobDetailsTag extends StatelessWidget {
   final String? text;
   const JobDetailsTag({super.key, required this.text});
 
+  /// Container for showing a tag in Job Details screen
   @override
   Widget build(BuildContext context) {
     final textTheme = Theme.of(context).textTheme;
@@ -18,8 +19,10 @@ class JobDetailsTag extends StatelessWidget {
       ),
       padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
       margin: const EdgeInsets.only(right: 12),
-      child: Text(text ?? '',
-          style: textTheme.labelSmall?.copyWith(color: cPurple)),
+      child: Text(
+        text ?? '',
+        style: textTheme.labelSmall?.copyWith(color: cPurple),
+      ),
     );
   }
 }

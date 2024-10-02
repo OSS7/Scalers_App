@@ -1,4 +1,4 @@
-package com.scalers.scalers_test
+package com.example.scalers_test
 
 import io.flutter.embedding.android.FlutterActivity
 

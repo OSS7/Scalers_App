@@ -8,8 +8,12 @@ import 'job_card/job_card_image.dart';
 import 'job_card/job_card_posted_time.dart';
 import 'job_card/job_card_specifications.dart';
 
+/// A widget that displays a job card
 class JobsJobCard extends StatelessWidget {
+  /// The job model to display
   final JobModel? job;
+
+  /// Creates a new instance of [JobsJobCard]
   const JobsJobCard({super.key, this.job});
 
   @override
@@ -30,6 +34,7 @@ class JobsJobCard extends StatelessWidget {
       ),
       child: InkWell(
         onTap: () {
+          // Navigate to job details page when the card is tapped
           Get.toNamed(MyRoutes.JOB_DETAILS, arguments: job?.id as String);
         },
         child: Column(
@@ -56,7 +61,12 @@ class JobsJobCard extends StatelessWidget {
     );
   }
 
+  /// The border radius of the card
   final _borderRadius = const BorderRadius.all(Radius.circular(8));
+
+  /// The margin of the card
   final _cardMargin = const EdgeInsets.symmetric(horizontal: 16, vertical: 15);
+
+  /// The padding of the card
   final _cardPadding = const EdgeInsets.all(15);
 }

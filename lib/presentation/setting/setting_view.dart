@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:scalers_test/core/widgets/custom_bottom_sheet.dart';
 
+/// A simple settings view that allows the user to toggle between light and dark mode.
 class SettingView extends StatefulWidget {
   const SettingView({super.key});
 
@@ -10,12 +10,12 @@ class SettingView extends StatefulWidget {
 }
 
 class _SettingViewState extends State<SettingView> {
+  /// Whether the app is currently in dark mode.
   bool _isDarkMode = Get.isDarkMode;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar: const CustomBottomSheet(),
       body: Center(
         child: InkWell(
           onTap: () {

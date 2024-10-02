@@ -1,5 +1,4 @@
 import 'package:http/http.dart' as http;
-import 'package:scalers_test/presentation/job_details/bloc/job_details_bloc.dart';
 import 'dart:convert';
 
 import 'job_details_model.dart';

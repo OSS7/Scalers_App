@@ -1,14 +1,15 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:scalers_test/data/models/job_model.dart';
 
-import '../../../../../core/constant/colors.dart';
-
+/// A widget that displays job's specifications.
 class JobCardSpecifications extends StatelessWidget {
+  /// The job to display specifications for.
   final JobModel? job;
-  JobCardSpecifications({super.key, required this.job});
+
+  /// Creates a new instance of [JobCardSpecifications].
+  const JobCardSpecifications({super.key, required this.job});
 
   @override
   Widget build(BuildContext context) {
@@ -27,8 +28,7 @@ class JobCardSpecifications extends StatelessWidget {
               Text(job?.title ?? 'N/A title', style: textTheme.headlineLarge),
               Text(
                 fixGarbledText(job?.companyName ?? 'N/A company'),
-                style: textTheme.labelMedium
-                ,
+                style: textTheme.labelMedium,
               ),
               Text('${job?.jobType} . ${job?.location}',
                   style: textTheme.labelMedium),
@@ -38,19 +38,12 @@ class JobCardSpecifications extends StatelessWidget {
       ),
     );
   }
-
-  final _smallFontStyle = TextStyle(
-      fontWeight: FontWeight.bold,
-      fontSize: 12,
-      color: cLight,
-      fontFamily: GoogleFonts.ibmPlexSansArabic().fontFamily);
-  final _largeFontStyle = const TextStyle(
-    fontWeight: FontWeight.bold,
-    fontSize: 14,
-  );
 }
 
-
+/// Fixes garbled text by decoding it from UTF-8.
+///
+/// Some APIs return garbled text in their responses.
+/// This function helps to fix this issue.
 String fixGarbledText(String garbledText) {
   return utf8.decode(garbledText.runes.toList());
 }

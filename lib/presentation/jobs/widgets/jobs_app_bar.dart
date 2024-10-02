@@ -3,8 +3,9 @@ import 'package:scalers_test/core/constant/colors.dart';
 import 'package:scalers_test/core/constant/icons.dart';
 import 'package:scalers_test/core/widgets/custom_icon.dart';
 
+/// Custom App bar for Jobs screen.
 class JobsAppBar extends StatelessWidget {
-  JobsAppBar({super.key});
+   JobsAppBar({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -32,10 +33,12 @@ class JobsAppBar extends StatelessWidget {
     );
   }
 
-  BoxShadow _boxShadow = BoxShadow(
+  /// The box shadow for the app bar.
+  final BoxShadow _boxShadow = BoxShadow(
     blurRadius: 10,
     offset: const Offset(0, 2),
     color: Colors.grey.withOpacity(0.1),
   );
-  final _padding = const EdgeInsets.symmetric(vertical: 4, horizontal: 24);
+
+  final EdgeInsets _padding = const EdgeInsets.symmetric(vertical: 4, horizontal: 24);
 }

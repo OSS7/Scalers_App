@@ -16,7 +16,7 @@ class JobCardImage extends StatelessWidget {
           url ?? '',
           fit: BoxFit.cover,
           width: size.width * 0.175,
-          height: size.height * 0.1,
+          height: size.height * 0.09,
         ),
       ),
     );

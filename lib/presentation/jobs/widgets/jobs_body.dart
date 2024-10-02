@@ -10,23 +10,25 @@ class JobsBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     int length = jobBloc.jobs.length;
-    return Expanded(
-      child: RefreshIndicator(
-        onRefresh: () async {
-           jobBloc.add(FetchJobsEvent());
-        },
-        child: length == 0
-            ? Text('Sorry there is no jobs available')
-            : ListView.builder(
-                itemCount: jobBloc.jobs.length,
-                itemBuilder: (context, index) {
-                  JobModel job = jobBloc.jobs[index];
-                  return JobsJobCard(
-                    job: job,
-                  );
-                },
-              ),
-      ),
+    return RefreshIndicator(
+      /// Refresh the list of jobs.
+      onRefresh: () async {
+        jobBloc.add(FetchJobsEvent());
+      },
+
+      child: length == 0
+          ? const Text('Sorry there is no jobs available')
+          : ListView.builder(
+              itemCount: jobBloc.jobs.length,
+              itemBuilder: (context, index) {
+                JobModel job = jobBloc.jobs[index];
+
+                /// Build a job card for each job in the list.
+                return JobsJobCard(
+                  job: job,
+                );
+              },
+            ),
     );
   }
 }

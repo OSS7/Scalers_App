@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../../core/widgets/custom_bottom_sheet.dart';
 import 'bloc/job_bloc.dart';
 import 'widgets/jobs_app_bar.dart';
 import 'widgets/jobs_body.dart';
@@ -18,24 +17,27 @@ class _JobsViewState extends State<JobsView> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        // backgroundColor: cWhite,
-        bottomNavigationBar: const CustomBottomSheet(),
         body: SizedBox(
           child: BlocBuilder<JobBloc, JobState>(
             bloc: jobBloc..add(FetchJobsEvent()),
+
+
             builder: (context, state) {
               return Column(
                 children: [
+                  /// The app bar of the Jobs screen.
                   JobsAppBar(),
-                  state is JobLoaded
-                      ? JobsBody()
-                      : Expanded(
-                          child: Center(
+
+                  /// The Jobs body.
+                  Expanded(
+                    child: state is JobLoaded
+                        ? const JobsBody()
+                        : Center(
                             child: state is JobError
                                 ? Text(state.message)
-                                : CircularProgressIndicator(),
+                                : const CircularProgressIndicator(),
                           ),
-                        ),
+                  ),
                 ],
               );
             },
