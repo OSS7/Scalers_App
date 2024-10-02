@@ -1,16 +1,58 @@
-# scalers_test
+# Scalers Test App
 
-A new Flutter project.
+**Scalers Test App** is a Flutter application that displays a list of job postings with job details, built using BLoC for state management. The app provides a clean architecture, integrates with various APIs, and is designed to be easily 
 
-## Getting Started
+## Download the Demo APK From the Link
+[https://drive.google.com/file/d/1MSt6fsy52z0RV1WSeF5rWtFjHTGuJ0hx/view?usp=sharing]
 
-This project is a starting point for a Flutter application.
+## Project Structure
+```bash
+  lib/
+  │
+  ├── core/                  # Core utilities and base classes
+  ├── data/                  # Data sources, repositories, and models
+  ├── domain/                # Business logic, use cases, and repositories
+  ├── presentation/          # UI screens, BLoC, and widget tree
+  │   ├── jobs/              # Job listing feature
+  │   ├── job_details/       # Job details feature
+  │   ├── resume/            # Resume feature
+  │   └── setting/           # Setting feature
+  └── main.dart              # Entry point of the application
+```
 
-A few resources to get you started if this is your first Flutter project:
+## Features
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+- Job Listings: Browse a comprehensive list of available jobs with key details such as title, company, location, and job type.
+- Job Details: Access in-depth information about each job, including company description, requirements, and benefits.
+- Theming: Toggle between light and dark modes to suit your preference and enhance readability.
+- Smooth Animations: Experience fluid transitions and interactive elements for an engaging user experience.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Installation
+
+1. Make sure you have Flutter installed on your machine. If not, follow the installation guide on the official [Flutter website](https://flutter.dev/docs/get-started/install).
+
+2. Clone the repository using the following command:
+    ```bash
+    git clone https://github.com/OSS7/Scalers_Test.git
+    ```
+
+3. Navigate to the project directory:
+    ```bash
+    cd Scalers_Test
+    ```
+
+4. Install the dependencies:
+    ```bash
+    flutter pub get
+    ```
+5. Run the Application
+    ```bash
+    flutter run
+    ```
+
+## Run Tests
+  The project includes basic widget tests. To run them, use the following command:
+
+  ```bash
+    flutter test
+  ```
