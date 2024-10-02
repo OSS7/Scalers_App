@@ -3,7 +3,7 @@
 **Scalers Test App** is a Flutter application that displays a list of job postings with job details, built using BLoC for state management. The app provides a clean architecture, integrates with various APIs, and is designed to be easily 
 
 ## Download the Demo APK From the Link
-[https://drive.google.com/file/d/1MSt6fsy52z0RV1WSeF5rWtFjHTGuJ0hx/view?usp=sharing]
+https://drive.google.com/file/d/1A5J8menKPDDn1UAQHUyEEqUg_uOjiV5T/view?usp=sharing
 
 ## Project Structure
 ```bash
